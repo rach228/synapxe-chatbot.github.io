@@ -5,28 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat Application</title>
     <link rel="stylesheet" href="style.css">
-    <script defer src="app.js"></script>
 </head>
 <body>
+    <!-- Login Section -->
     <div id="login-section">
         <input type="text" id="username" placeholder="Username" />
         <input type="password" id="password" placeholder="Password" />
-        <button onclick="login()">Login</button>
+        <button onclick="showUpload()">Login</button>
     </div>
+    
+    <!-- Upload Section (Initially Hidden) -->
     <div id="upload-section" style="display: none;">
-        <input type="file" id="fileInput" onchange="displayFileContent()" />
+        <input type="file" id="fileInput" />
         <div id="fileContent"></div>
-        <button onclick="goToChat()">Go to Chat</button>
+        <button onclick="showChat()">Go to Chat</button>
     </div>
+    
+    <!-- Chat Section (Initially Hidden) -->
     <div id="chat-section" style="display: none;">
-        <flowise-fullchatbot></flowise-fullchatbot>
-        <script type="module">
-            import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
-            Chatbot.initFull({
-                chatflowid: "6ef60869-af77-4650-a7f3-5280599a10af",
-                apiHost: "https://flowise-flowise.apps.ky4n7bsb.eastus.aroapp.io",
-            });
-        </script>
+        <!-- Placeholder for Chat -->
+        <p>Chat would go here. Please integrate the chat widget as per platform's guidelines.</p>
     </div>
+    
+    <script src="app.js"></script>
 </body>
 </html>
