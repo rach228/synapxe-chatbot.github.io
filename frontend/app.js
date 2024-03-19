@@ -1,9 +1,10 @@
 function login() {
-    // Simple login validation
+    // Example login check (for demonstration)
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
-    if (username === "admin" && password === "admin") { // Simple check (for demonstration only)
-        window.location.href = 'upload.html'; // Redirect to the upload page
+    if (username === "admin" && password === "admin") {
+        document.getElementById('login-section').style.display = 'none';
+        document.getElementById('upload-section').style.display = 'block';
     } else {
         alert("Invalid credentials!");
     }
@@ -17,12 +18,13 @@ function displayFileContent() {
     const reader = new FileReader();
     
     reader.onload = function(e) {
-        fileContent.innerText = e.target.result; // Display file content
+        fileContent.innerText = e.target.result;
     };
     
-    reader.readAsText(file); // Read the file content as text
+    reader.readAsText(file);
 }
 
 function goToChat() {
-    window.location.href = 'chat.html'; // Redirect to the chat page
+    document.getElementById('upload-section').style.display = 'none';
+    document.getElementById('chat-section').style.display = 'block';
 }
